@@ -33,7 +33,7 @@
     <div class="container">
       <div class="row">
         <!-- Select By Region -->
-        <div class="col-10 col-md-6 mx-auto">
+        <div class="col-10 col-md-6 col-lg-4 my-5 mx-auto">
           <select
             id="country-select"
             class="form-select"
@@ -46,6 +46,22 @@
             <option value="north%20america">North America</option>
             <option value="ame">America</option>
           </select>
+        </div>
+
+        <!-- Search By Capital -->
+        <div class="col-10 col-md-6 mx-auto col-lg-4 my-5">
+          <div class="d-flex" role="search">
+        <input id="search-capital" class="form-control me-2" type="search" placeholder="Search Capital" aria-label="Search">
+        <button onclick="displaySearchCapital()" class="btn btn-outline-success" type="submit">Search</button>
+      </div>
+        </div>
+
+        <!-- Search By Name -->
+        <div class="col-10 col-md-6 col-lg-4 my-5 mx-auto ">
+          <div class="d-flex" role="search">
+        <input id="search-country-name" class="form-control me-2" type="search" placeholder="Search Country" aria-label="Search">
+        <button onclick="displaySearchCountry()" class="btn btn-outline-success" type="submit">Search</button>
+      </div>
         </div>
 
         

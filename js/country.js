@@ -23,11 +23,7 @@ const displayCountry = (countries) => {
     countryDiv.classList.add("mx-auto");
     countryDiv.classList.add("my-5");
 
-    
-
-
     countryDiv.innerHTML = `
-    
           <div class="card" style="width: 18rem">
             <img
               src="${country.flags.png}"
@@ -53,11 +49,11 @@ const displayCountry = (countries) => {
   });
 };
 
-
+// Select by Country region
 const selectElement = document.querySelector("#country-select");
 selectElement.addEventListener("change", function(){
     const selectedValue = selectElement.value;
-    // console.log(selectedValue);
+     console.log(selectedValue);
     const searchRegion = () =>{
         const searchText = `subregion/${selectedValue}`;
         // const searchText = `subregion/americas`;
@@ -69,14 +65,38 @@ selectElement.addEventListener("change", function(){
         } 
         // console.log(searchText);
     }
-
-
     searchRegion();
 })
 
 
 
 loadCountries('all');
+
+
+
+// Search Capital
+const displaySearchCapital = () =>{
+  const searchCapital = document.querySelector("#search-capital");
+  const searchValue = searchCapital.value;
+  const searchCapitalByName = () => {
+    const searchText = `capital/${searchValue}`;
+    loadCountries(searchText);
+  }
+  searchCapitalByName();
+}
+
+// Search Country
+const displaySearchCountry = () => {
+  const searchCapital = document.querySelector("#search-country-name");
+  const searchValue = searchCapital.value;
+  const searchCapitalByName = () => {
+    const searchText = `name/${searchValue}`;
+    loadCountries(searchText);
+  };
+  searchCapitalByName();
+};
+
+
 
 
 
